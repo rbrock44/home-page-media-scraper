@@ -5,7 +5,7 @@ val sources = listOf(
     """\\10.0.0.50\usbc\Movies"""
 )
 
-const val outputFile = """c\\workspace\\home-media-file\\media.txt"""
+const val outputFile = """C:\workspace\home-page-media-file\media.txt"""
 
 fun main() {
     val lines = saveFilenames()
@@ -42,5 +42,7 @@ fun getFiles(directories: List<String>): List<String> {
 }
 
 fun writeToFile(outputList: List<String>, path: String) {
-    File(path).writeText(outputList.joinToString(separator = "\n"))
+    val file = File(path)
+    file.createNewFile()
+    file.writeText(outputList.joinToString(separator = "\n"))
 }
