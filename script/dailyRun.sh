@@ -7,7 +7,7 @@ git pull
 
 cd c:\\workspace\\home-page-media-scraper || exit
 git pull
-gradlew run
+./gradlew run
 
 cd c:\\workspace\\home-page-media-file || exit
 git add .
