@@ -30,7 +30,9 @@ fun getFiles(directories: List<String>): List<String> {
         val directory = dirList[0]
         val files = File(directory).list { dir, name -> !File(dir, name).isDirectory}
         files?.forEach {
-            fileList.add(it)
+            if (!it.endsWith(".nfo") && !it.endsWith(".srt") && !it.endsWith(".sub")) {
+                fileList.add(it)
+            }
         }
         val newDirectories = File(directory).list { dir, name -> File(dir, name).isDirectory}
         newDirectories?.forEach {
